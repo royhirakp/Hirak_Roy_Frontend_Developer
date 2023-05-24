@@ -7,10 +7,8 @@ import Typography from "@mui/material/Typography";
 const Popup = (props) => {
   const { type, details, capsule_serial, capsule_id } = props.data.data;
 
-  // console.log(type, missions, details, capsule_serial, capsule_id);
   return (
     <div>
-      {/* <div key={indx}> */}
       <Card
         sx={{ maxWidth: 200 }}
         onClick={() => {

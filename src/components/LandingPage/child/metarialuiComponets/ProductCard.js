@@ -6,7 +6,6 @@ import Popup from "./Popup";
 const ProductCard = (props) => {
   const [popupStatus, setPopupStatus] = React.useState(false);
   const { capsule_id, capsule_serial, type } = props.data;
-  // console.log(capsule_id, capsule_serial);
   return (
     <>
       {popupStatus ? (

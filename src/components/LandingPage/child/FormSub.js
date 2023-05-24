@@ -23,6 +23,8 @@ const FormSub = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+
+          // width: "300px",
         }}
       >
         <form
@@ -46,6 +48,9 @@ const FormSub = () => {
             flexWrap: "wrap",
             // border: "1px solid black",
             width: "500px",
+            border: "1px solid",
+            padding: "10px",
+            borderRadius: "10px",
             // paddingLeft: "25%",
             // padding-left: '25%'
           }}
@@ -81,9 +86,20 @@ const FormSub = () => {
               variant="standard"
             />
           </Box>
-          <button>submit</button>
+          <button
+            style={{
+              width: "100px",
+              borderRadius: "6px",
+              cursor: "pointer",
+            }}
+          >
+            submit
+          </button>
         </form>
         <button
+          style={{
+            width: "100px",
+          }}
           onClick={() => {
             dispatch(setFilterstatus());
           }}

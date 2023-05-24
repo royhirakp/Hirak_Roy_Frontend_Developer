@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { clearAlluser } from "../actions/indexAC"
 const fromSluce = createSlice({
   name: "formData",
   initialState: {

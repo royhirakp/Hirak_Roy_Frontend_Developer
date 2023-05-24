@@ -5,8 +5,6 @@ import { Fade } from "react-slideshow-image";
 import Button from "@mui/material/Button";
 const linksAndDATA = [
   { url: "https://source.unsplash.com/OHOU-5UVIYQ", caption: "first" },
-
-  // { url: "https://source.unsplash.com/w_WZRYHb-D0", caption: "2nd-2nd" },
   { url: "https://source.unsplash.com/Ptd-iTdrCJM", caption: "2nd" },
   { url: "https://source.unsplash.com/uj3hvdfQujI", caption: "3rd" },
 ];
@@ -19,7 +17,6 @@ const Banner = () => {
           return (
             <div key={indx}>
               <div
-                className="iamge-Braground-div"
                 style={{
                   height: "700px",
                   backgroundImage: `url(${item.url})`,
@@ -29,13 +26,29 @@ const Banner = () => {
                   justifyContent: "center",
                 }}
               >
-                {/* buttons */}
+                {/* <h1>hirak data</h1> */}
+                <p
+                  style={{
+                    width: "400px",
+                    textAlign: "justify",
+                    // text,
+                  }}
+                >
+                  <b>
+                    First privately developed liquid-fueled rocket to put a
+                    commercial satellite in orbit. First private company to
+                    successfully launch, orbit, and recover a spacecraft. First
+                    private company to send a spacecraft to the International
+                    Space Station (ISS). First landing of an orbital-class
+                    rocket's first stage on land.
+                  </b>
+                </p>
                 <div
                   className="navContainer"
                   style={{
-                    position: "relative",
                     bottom: "300px",
                     right: "200px",
+                    position: "relative",
                   }}
                 >
                   <nav
