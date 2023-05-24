@@ -8,7 +8,7 @@ import { setFormData } from "../../../Store/slice/FormSlice";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setFilterCapsuleData,
-  setFilterstatus,
+  // setFilterstatus,
 } from "../../../Store/slice/capsuleDataFilter";
 
 const FormSub = () => {

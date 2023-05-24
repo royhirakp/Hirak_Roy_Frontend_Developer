@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Banner from "./child/Banner";
 import DataGrid from "./child/DataGrid";
 import FormSub from "./child/FormSub";
-import Loader from "./child/metarialuiComponets/Loader";
+import Loader from "./child/metarialuiComponets/Loader/Loader";
 
 import {
   useDispatch,
