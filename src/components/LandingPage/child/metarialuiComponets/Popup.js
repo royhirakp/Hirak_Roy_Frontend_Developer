@@ -8,13 +8,24 @@ const Popup = (props) => {
   const { type, details, capsule_serial, capsule_id } = props.data.data;
 
   return (
-    <div>
-      <Card
-        sx={{ maxWidth: 200 }}
-        onClick={() => {
-          props.setPopupStatus(false);
-        }}
-      >
+    <div
+      style={{
+        border: "1px solid",
+        // zIndex: "9999",
+        position: "absolute",
+        background: "black",
+        backdropFilter: "blur(5px)",
+        // filter: "blur(8px)",
+      }}
+    >
+      <Card sx={{ maxWidth: 200 }}>
+        <button
+          onClick={() => {
+            props.setPopupStatus(false);
+          }}
+        >
+          Cancle
+        </button>
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
             capsule Type:{type}

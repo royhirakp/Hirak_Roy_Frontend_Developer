@@ -9,7 +9,7 @@ const DefultCard = (props) => {
     <div>
       <div
         onClick={() => {
-          console.log(props.popupStatus);
+          // console.log(props.popupStatus);
           props.setPopupStatus(!props.popupStatus);
         }}
       >

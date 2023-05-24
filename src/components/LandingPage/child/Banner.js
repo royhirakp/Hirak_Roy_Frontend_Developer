@@ -87,7 +87,14 @@ const Banner = () => {
                                 padding: "5px",
                               }}
                             >
-                              <Button variant="contained">{i}</Button>
+                              <Button
+                                onClick={() => {
+                                  alert("this button has no function");
+                                }}
+                                variant="contained"
+                              >
+                                {i}
+                              </Button>
                             </div>
                           );
                         }

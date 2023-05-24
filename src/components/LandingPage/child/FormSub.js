@@ -23,15 +23,14 @@ const FormSub = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-
           // width: "300px",
         }}
       >
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            console.log("submit");
-            console.log(Storedata);
+            // console.log("submit");
+            // console.log(Storedata);
             // console.log(Storedata.capsuleSlice.data);
             let filterData = Storedata.capsuleSlice.data?.filter((obj) => {
               let test1 = obj.type.includes(Storedata.fromData.data1);
@@ -96,7 +95,7 @@ const FormSub = () => {
             submit
           </button>
         </form>
-        <button
+        {/* <button
           style={{
             width: "100px",
           }}
@@ -105,7 +104,7 @@ const FormSub = () => {
           }}
         >
           Cancel Search filter
-        </button>
+        </button> */}
       </Box>
     </div>
   );

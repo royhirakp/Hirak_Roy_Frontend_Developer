@@ -17,7 +17,6 @@ const FilterDataGrid = ({ Storedata }) => {
           alignItems: "center",
         }}
       >
-        <p>filter data</p>
         {Storedata.capsuleDataFilter.filterdata?.map((item, indx) => {
           return (
             <div
@@ -36,7 +35,6 @@ const FilterDataGrid = ({ Storedata }) => {
 };
 
 const DefoultDataGrid = ({ state }) => {
-  console.log("state======", state);
   return (
     <div
       style={{
@@ -48,7 +46,6 @@ const DefoultDataGrid = ({ state }) => {
         alignItems: "center",
       }}
     >
-      <p>default data</p>
       {state?.map((item, indx) => {
         return (
           <div
