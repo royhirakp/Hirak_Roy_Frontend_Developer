@@ -13,40 +13,37 @@ import axios from "axios";
 // require("dotenv").config();
 
 const LandingPage = () => {
-  // console.log(process.env.hirak, "=============env");
   // const storeDta = useSelector((s) => s);
   const tempFUNCTION = useRef();
   const dispatch = useDispatch();
   async function TokenGenaration() {
-    axios
-      .post(`https://company-ass1.onrender.com/v1/tokenGenarate`, {
-        user: "hirak",
-      })
-      .then((res) => {
-        // console.log(res.data.token, "form tyen ");
-        dispatch(setToken(res.data.token));
-
-        //api call for 2nd data
-        const config = {
+    try {
+      //api call for get the token
+      let r1 = await axios.post(
+        `https://company-ass1.onrender.com/v1/tokenGenarate`,
+        {
+          user: "hirak",
+        }
+      );
+      dispatch(setToken(r1.data.token));
+      //api for get the data
+      const r2 = await axios.get(
+        `https://company-ass1.onrender.com/v1/capsules`,
+        {
           headers: {
-            auth: res.data.token,
+            auth: r1.data.token,
           },
-        };
-        axios
-          .get(`https://company-ass1.onrender.com/v1/capsules`, config)
-          .then((res2) => {
-            dispatch(setAllCapsuleData(res2.data));
-          })
-          .catch((err) => console.log(err));
-      })
-
-      .catch((err) => console.log(err));
+        }
+      );
+      dispatch(setAllCapsuleData(r2.data));
+    } catch (error) {
+      console.log(error);
+    }
   }
   tempFUNCTION.current = TokenGenaration;
   useEffect(() => {
     //function for genarate the token and save to the store
     tempFUNCTION.current();
-    // TokenGenaration();
   }, []);
 
   return (
