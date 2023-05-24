@@ -4,12 +4,12 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 const DefultCard = (props) => {
-  const { capsule_id, capsule_serial, type } = props.data;
+  const { capsule_id, capsule_serial, type } = props.data.data;
+  console.log(capsule_id, capsule_serial, type, "==============props data");
   return (
     <div>
       <div
         onClick={() => {
-          // console.log(props.popupStatus);
           props.setPopupStatus(!props.popupStatus);
         }}
       >
@@ -23,7 +23,7 @@ const DefultCard = (props) => {
               <b>
                 <u> type:</u>
               </b>
-              {type}
+              <span style={{ color: "blueviolet" }}> {type}</span>
             </Typography>
 
             <Typography
