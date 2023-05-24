@@ -1,7 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Banner from "./child/Banner";
 import DataGrid from "./child/DataGrid";
 import FormSub from "./child/FormSub";
+import Loader from "./child/metarialuiComponets/Loader";
 
 import {
   useDispatch,
@@ -14,11 +15,13 @@ import axios from "axios";
 
 const LandingPage = () => {
   // const storeDta = useSelector((s) => s);
+  const [loaderStatus, setLoaderStatus] = useState(false);
   const tempFUNCTION = useRef();
   const dispatch = useDispatch();
   async function TokenGenaration() {
     try {
       //api call for get the token
+      setLoaderStatus(true);
       let r1 = await axios.post(
         `https://company-ass1.onrender.com/v1/tokenGenarate`,
         {
@@ -39,6 +42,7 @@ const LandingPage = () => {
     } catch (error) {
       console.log(error);
     }
+    setLoaderStatus(false);
   }
   tempFUNCTION.current = TokenGenaration;
   useEffect(() => {
@@ -48,6 +52,8 @@ const LandingPage = () => {
 
   return (
     <div>
+      {/* <Loader /> */}
+      {loaderStatus ? <Loader /> : ""}
       <Banner />
       <FormSub />
       <DataGrid />
